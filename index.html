@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Tokenscan</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔍</text></svg>">
+    <title>Title</title>
    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="/socket.io/socket.io.js"></script>
@@ -14,201 +13,42 @@
     <!--CSS-->
     
     <link type="text/css"  rel="stylesheet" href="style.css">
+    <link type="text/css"  rel="stylesheet" href="table.css">
     <!--<script type="text/javascript" src="./abi.js"></script> -->
   </head>
 
   <body>
      <!--HEADER -->
     <header>
-      <div id =headerwrap>
-        <div id="headertitle">
-          <h1>Tokenscan.app</h1>
-        </div>
-        <div id="headersocials">
-          <a class ="socialsvg" href="https://www.w3schools.com"><svg width="40px" height="40px"version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="0 0 112.197 112.197" style="enable-background:new 0 0 112.197 112.197;" xml:space="preserve">
-         <g>
-           <circle style="fill:#55ACEE;" cx="56.099" cy="56.098" r="56.098"/>
-           <g>
-             <path style="fill:#F1F2F2;" d="M90.461,40.316c-2.404,1.066-4.99,1.787-7.702,2.109c2.769-1.659,4.894-4.284,5.897-7.417
-               c-2.591,1.537-5.462,2.652-8.515,3.253c-2.446-2.605-5.931-4.233-9.79-4.233c-7.404,0-13.409,6.005-13.409,13.409
-               c0,1.051,0.119,2.074,0.349,3.056c-11.144-0.559-21.025-5.897-27.639-14.012c-1.154,1.98-1.816,4.285-1.816,6.742
-               c0,4.651,2.369,8.757,5.965,11.161c-2.197-0.069-4.266-0.672-6.073-1.679c-0.001,0.057-0.001,0.114-0.001,0.17
-               c0,6.497,4.624,11.916,10.757,13.147c-1.124,0.308-2.311,0.471-3.532,0.471c-0.866,0-1.705-0.083-2.523-0.239
-               c1.706,5.326,6.657,9.203,12.526,9.312c-4.59,3.597-10.371,5.74-16.655,5.74c-1.08,0-2.15-0.063-3.197-0.188
-               c5.931,3.806,12.981,6.025,20.553,6.025c24.664,0,38.152-20.432,38.152-38.153c0-0.581-0.013-1.16-0.039-1.734
-               C86.391,45.366,88.664,43.005,90.461,40.316L90.461,40.316z"/>
-           </g>
-         </svg>
-         
-          </a>
-          <a class ="socialsvg" href="https://www.w3schools.com"><svg width="40px" height="40px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="512" cy="512" r="512" style="fill:#5865f2"/>
-            <path d="M689.43 349a422.21 422.21 0 0 0-104.22-32.32 1.58 1.58 0 0 0-1.68.79 294.11 294.11 0 0 0-13 26.66 389.78 389.78 0 0 0-117.05 0 269.75 269.75 0 0 0-13.18-26.66 1.64 1.64 0 0 0-1.68-.79A421 421 0 0 0 334.44 349a1.49 1.49 0 0 0-.69.59c-66.37 99.17-84.55 195.9-75.63 291.41a1.76 1.76 0 0 0 .67 1.2 424.58 424.58 0 0 0 127.85 64.63 1.66 1.66 0 0 0 1.8-.59 303.45 303.45 0 0 0 26.15-42.54 1.62 1.62 0 0 0-.89-2.25 279.6 279.6 0 0 1-39.94-19 1.64 1.64 0 0 1-.16-2.72c2.68-2 5.37-4.1 7.93-6.22a1.58 1.58 0 0 1 1.65-.22c83.79 38.26 174.51 38.26 257.31 0a1.58 1.58 0 0 1 1.68.2c2.56 2.11 5.25 4.23 8 6.24a1.64 1.64 0 0 1-.14 2.72 262.37 262.37 0 0 1-40 19 1.63 1.63 0 0 0-.87 2.28 340.72 340.72 0 0 0 26.13 42.52 1.62 1.62 0 0 0 1.8.61 423.17 423.17 0 0 0 128-64.63 1.64 1.64 0 0 0 .67-1.18c10.68-110.44-17.88-206.38-75.7-291.42a1.3 1.3 0 0 0-.63-.63zM427.09 582.85c-25.23 0-46-23.16-46-51.6s20.38-51.6 46-51.6c25.83 0 46.42 23.36 46 51.6.02 28.44-20.37 51.6-46 51.6zm170.13 0c-25.23 0-46-23.16-46-51.6s20.38-51.6 46-51.6c25.83 0 46.42 23.36 46 51.6.01 28.44-20.17 51.6-46 51.6z" style="fill:#fff"/>
-         </svg>
-         </a>
-        </div>
-        
-      </div>
+      
     </header>
     <!--MAIN -->
     <main>
-    
-
-      <!--NETWORK SELECTION-->
-      <div class="mycontainer">
-       
-
-        <div id="NetworkContainer1">
-          <div id="NetworkContainer2">
-            <p id="Network">NETWORK: ETH</p>
-          </div><div id="NetworkContainer3">
-            <button type="button" class="active2" id="ETHButton"><span id="ethsvg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="40" viewBox="0 0 256 417" version="1.1" preserveAspectRatio="xMidYMid">
-              <g>
-                <polygon fill="#343434" points="127.9611 0 125.1661 9.5 125.1661 285.168 127.9611 287.958 255.9231 212.32"/>
-                <polygon fill="#8C8C8C" points="127.962 0 0 212.32 127.962 287.959 127.962 154.158"/>
-                <polygon fill="#3C3C3B" points="127.9611 312.1866 126.3861 314.1066 126.3861 412.3056 127.9611 416.9066 255.9991 236.5866"/>
-                <polygon fill="#8C8C8C" points="127.962 416.9052 127.962 312.1852 0 236.5852"/>
-                <polygon fill="#141414" points="127.9611 287.9577 255.9211 212.3207 127.9611 154.1587"/>
-                <polygon fill="#393939" points="0.0009 212.3208 127.9609 287.9578 127.9609 154.1588"/>
-              </g>
-            </svg></span><br>ETH</button>
-            <button type="button" class="button2" id="BSCButton"><span id="bscsvg"><svg xmlns="http://www.w3.org/2000/svg"
-              width="40px" height="40px"
-              viewBox="0 0 1200 1200">
-           <path id="Selection"
-                 fill="#f3ba2f" 
-                 d="M 225.00,367.00
-                    C 225.00,367.00 593.00,1.20 593.00,1.20
-                      593.00,1.20 961.00,368.00 961.00,368.00
-                      961.00,368.00 825.00,503.00 825.00,503.00
-                      825.00,503.00 593.00,271.00 593.00,271.00
-                      588.59,277.16 364.61,501.62 361.00,501.66
-                      357.91,501.71 225.00,367.00 225.00,367.00 Z
-                    M 595.00,462.54
-                    C 597.26,463.82 729.84,597.08 728.83,600.00
-                      727.99,602.44 596.47,734.05 594.00,734.66
-                      590.68,735.49 455.85,600.82 457.17,597.00
-                      458.04,594.48 592.86,461.72 595.00,462.54 Z
-                    M 129.00,464.34
-                    C 133.79,464.55 263.80,595.16 263.80,598.00
-                      263.80,600.96 133.37,731.07 131.00,731.66
-                      127.50,732.54 -0.14,598.39 0.06,596.00
-                      0.54,590.21 124.32,466.89 129.00,464.34 Z
-                    M 1058.00,464.54
-                    C 1060.26,465.82 1190.84,597.08 1189.83,600.00
-                      1188.99,602.44 1059.47,732.05 1057.00,732.66
-                      1053.68,733.49 920.85,600.82 922.17,597.00
-                      923.04,594.48 1055.86,463.72 1058.00,464.54 Z
-                    M 360.00,693.00
-                    C 366.09,697.36 589.79,922.96 593.00,922.96
-                      596.21,922.96 819.91,697.36 826.00,693.00
-                      826.00,693.00 961.00,829.00 961.00,829.00
-                      961.00,829.00 593.00,1194.80 593.00,1194.80
-                      593.00,1194.80 225.00,828.00 225.00,828.00
-                      225.00,828.00 360.00,693.00 360.00,693.00 Z" />
-         </svg></span><br>BSC</button>
-            <button type="button" class="button2" id="CROButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 2167.7 2502.5"  width="40px" height="40px" style="enable-background:new 0 0 2167.7 2502.5;" xml:space="preserve">
-              <style type="text/css">
-                .st0{fill:url(#SVGID_1_);}
-                .st1{fill:url(#SVGID_00000016760000628848746960000000291323288447655331_);}
-                .st2{fill:#FFFFFF;}
-              </style>
-              <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="795.8919" y1="1699.9476" x2="795.8919" y2="1608.7477" gradientTransform="matrix(27.4398 0 0 -27.4398 -20755.2402 46646.2188)">
-                <stop offset="0" style="stop-color:#25376C"/>
-                <stop offset="1" style="stop-color:#1F1F49"/>
-              </linearGradient>
-              <path class="st0" d="M1083.9,0L0,625.6v1251.3l1083.9,625.6l1083.9-625.6V625.6L1083.9,0z"/>
-              <linearGradient id="SVGID_00000007418222533405911760000015435408293652292017_" gradientUnits="userSpaceOnUse" x1="776.1419" y1="1608.7477" x2="776.1419" y2="1699.9476" gradientTransform="matrix(27.4398 0 0 -27.4398 -20755.2402 46646.2188)">
-                <stop offset="0" style="stop-color:#25376C"/>
-                <stop offset="1" style="stop-color:#1F1F49"/>
-              </linearGradient>
-              <path style="fill:url(#SVGID_00000007418222533405911760000015435408293652292017_);" d="M1083.9,0L0,625.6v1251.3l1083.9,625.6V0z"/>
-              <path class="st2" d="M1506.4,540.6H655.8L557,974.1h1053.7L1506.4,540.6z M806.7,1569.6v-288.1l-252.4-159.2l-285.4,211.3  l389.6,677.8H815l183.8-172.9v-85.1L806.7,1569.6z"/>
-              <path class="st2" d="M1358.3,1040H809.5l90.6,241.5l-27.4,271.7h422.6l-27.4-271.7L1358.3,1040z"/>
-              <path class="st2" d="M1610.7,1119.5L1361,1281.4v288.1l-189.3,183.8v85.1l183.8,170.1h153.7l386.9-675L1610.7,1119.5z"/>
-              </svg><br>CRO</button>
-          </div>
+      <div id="container">
+        <div id="pageheader">  
+          <h1>Axcelerant</h1>
         </div>
-      </div>
+       <div id="mainpage">  
+         <a id="bloglink" href="./multisig1.html">
+          Multisig1
+         </a>
+         <p id="bloglink">
+           multisig2
+        </p>
+        <p id="bloglink">
+           multisig3
+        </p>
 
-      <!--SEARCH BAR-->
-      <div class="mycontainer">
-        <div id="searchbar">
-          <form id="form" action="">
-            <input id="input" autocomplete="off" /><button>Send</button>
-          </form>
-        </div>
-      </div>
-      <!--RESULTS PRINT-->
-      <!-- this should be inside mycontainer wrap-->
-      <div class="mycontainer">
-        <div id="results">
-          <div id="tablecontainer">
-           <table class ="tbl1" id="tableprint"></table>
-          </div>
        </div>
       </div>
-    </main>
+       
 
-    
+     
+    </main>
     <!--FOOTER-->
     <footer>
-      <div class="mycontainer" >
-        <div class="footerwrap">
-          <div class="one">
-            <div class="copyright">
-              <p>&copy Made by Axcelerant</p>
-              <p>Made by Axcelerant</p>
-              <p>Made by Axcelerant</p>
-            </div>
-          </div>
-          <div class="two">
-            <div class="copyright2">
-              <p>Community</p>
-              <p>discord</p>
-              <p>twitter</p>
-              <p>email</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </footer>
-<!--JAVSCRIPT-->
-<script type="text/javascript" src="./main.js"></script>
-<script>
-  var socket = io();
-
-  var form = document.getElementById('form');
-  var input = document.getElementById('input');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    if (input.value) {
-      if (regcheck(input.value)) {
-        //choose selected network
-        input.value = flag + input.value;
-        //emit the message to server
-        socket.emit('chat message', input.value);
-        
-        console.log("inputVALUE:", input.value);
-        input.value = '';
-        socket.on('chat message', (arg) => {
-        console.log(arg);
-        //createHtmlOutput(arg);
-        tablecreate(arg);
-        });
-      }
-      else {
-        console.log("invalid address");
-      }
-    }
-  });
-  
-</script>
-
-
-
+    
   </body>
 </html>

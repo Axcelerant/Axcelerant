@@ -1,0 +1,202 @@
+/**
+ * Reset some basic elements
+ */
+ body, h1, h2, h3, h4, h5, h6,
+ p, blockquote, pre, hr,
+ dl, dd, ol, ul, figure {
+   margin: 0;
+   padding: 0; }
+
+body {
+    font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #111;
+    background-color: #fdfdfd; /*#f7b84a*/
+
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal; 
+    border-top: 3px solid rgb(5, 5, 5);
+}
+
+
+/* THE DIV CLASSES*/
+/*main container*/
+#container {
+  
+}
+
+#pageheader {
+  width: 100%;
+  height: 400px;
+}
+
+#mainpage {
+  width: 100;
+  text-align: center;
+}
+
+#bloglink{
+  display: block;
+  text-align: center;
+  font-size: 2em;
+}
+
+#post {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: antiquewhite;
+}
+
+pre,
+code {
+  font-size: 15px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  background-color: #eef; 
+  text-align: left;
+}
+
+code {
+  padding: 1px 5px; }
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto; }
+  pre > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+#piechart {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+#Lcollumn {
+  float: left;
+  /*width: 384px;*/
+  width: 20%;
+}
+
+#Rcollumn {
+  float: left;
+  width: 20%;
+}
+
+#Mcollumn {
+  width: 60%;
+  float: left;
+}
+
+div.clear {
+  clear: both;
+  clear: both;
+}
+
+
+img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /*width: 50%;*/
+}
+
+#p1 {
+   font-size: 40px;
+   text-align: center;
+}
+
+#p2 {
+    font-size: 20px;
+    text-align: center;
+}
+
+
+
+#div1 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  clear: both;
+}
+
+#intro1 {
+  width: 50%;
+  float: left;
+}
+
+#intro2 {
+  width: 50%;
+  float: right;
+}
+
+ul {
+    font-size: 28px;
+    padding-bottom: 50px;
+    font-weight: bold;
+    list-style-position: inside;
+    padding-left: 30px;
+}
+
+
+/* MEDIA RESIZE */
+
+@media screen and (max-width:1024px){    
+    #p1{font-size: 20px;}
+    #p2{font-size: 18px;}
+    ul {font-size: 20px; padding-left: 20px;}
+    #Lcollumn {}
+    #Rcollumn {}
+    #Mcollumn {}
+}
+
+@media screen and (max-width:580px){
+  #p1{font-size: 18px;}
+  #p2{font-size: 16px;}
+  ul {font-size: 14px; padding-left: 12px;}
+  #Lcollumn {width: 0%; display:none;}
+  #Mcollumn {width: 90%; padding-left: 5%;  padding-right: 5%;}
+  #Rcollumn {width: 0%; display:none;}
+ 
+  #piechart {display: none;}
+  #intro2 {width: 0%;}
+  #intro1 {width: 100%;}
+}
